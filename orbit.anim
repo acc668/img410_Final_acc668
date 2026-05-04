@@ -1,0 +1,32 @@
+img410anim
+frames: 48
+fps:    24
+width:  400
+height: 300
+
+# camera stays fixed for the whole animation
+camera width: 2 height: 2;
+
+# a sphere that arcs across the scene and shifts from red -> blue -> red
+sphere sphere0
+    keyframe time: 0.00  position: -4 0 -6  c_diff: 1.0 0.0 0.0  radius: 1.0;
+    keyframe time: 0.25  position: -1 2 -5  c_diff: 1.0 0.5 0.0  radius: 1.2;
+    keyframe time: 0.50  position:  0 0 -4  c_diff: 0.0 0.0 1.0  radius: 1.5;
+    keyframe time: 0.75  position:  1 2 -5  c_diff: 0.5 0.0 1.0  radius: 1.2;
+    keyframe time: 1.00  position:  4 0 -6  c_diff: 1.0 0.0 0.0  radius: 1.0;
+end
+
+# a smaller sphere that orbits in the opposite direction
+sphere sphere1
+    keyframe time: 0.00  position:  3 1 -5  c_diff: 0.0 1.0 0.5  radius: 0.6;
+    keyframe time: 0.33  position:  0 3 -5  c_diff: 1.0 1.0 0.0  radius: 0.6;
+    keyframe time: 0.66  position: -3 1 -5  c_diff: 0.0 1.0 1.0  radius: 0.6;
+    keyframe time: 1.00  position:  3 1 -5  c_diff: 0.0 1.0 0.5  radius: 0.6;
+end
+
+# ground plane – single keyframe = static (no animation)
+plane floor
+    keyframe time: 0.0  position: 0 -2 0  c_diff: 0.4 0.4 0.4  radius: 0  normal: 0 1 0;
+end
+
+end
